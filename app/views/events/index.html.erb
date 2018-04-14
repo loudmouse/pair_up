@@ -14,7 +14,7 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.user %></td>
+        <td><%= event.host.email %></td>
         <td><%= event.description %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
