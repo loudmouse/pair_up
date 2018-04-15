@@ -35,14 +35,6 @@
 <% @event.attendees.each do |attendee| %>
 	<li class="list-group-item">
 		<%= link_to attendee.email, attendee %>
-	</li>
-<% end %>
-
-<h2>Attending</h2>
-
-<% @event.attendees.each do |attendee| %>
-	<li class="list-group-item">
-		<%= link_to attendee.email, attendee %>
 		<% if current_user == @event.host %>
 			<br>
 			<%= link_to "Remove", unattend_path(event_id: @event.id, user_id: attendee.id), method: :delete, class: "btn-seconday btn-sm" %>
