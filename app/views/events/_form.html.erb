@@ -16,6 +16,11 @@
     <%= form.text_area :description, id: :event_description %>
   </div>
 
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date, id: :event_date %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
