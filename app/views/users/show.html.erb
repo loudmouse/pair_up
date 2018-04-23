@@ -1,5 +1,5 @@
 
-<h1>Events</h1>
+<h1>Hosting</h1>
   <table>
     <tbody>
       <tr>
@@ -12,3 +12,11 @@
     <% end %>
     </tbody>
   </table>
+
+  <h2>Attending</h2>
+
+  <% @user.attended_events.each do |attended_event| %>
+  	<li class="list-group-item">
+  		<%= link_to attended_event.description, attended_event %>
+  	</li>
+  <% end %>
