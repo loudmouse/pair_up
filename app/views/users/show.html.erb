@@ -1,22 +1,49 @@
 
 <h1>Hosting</h1>
-  <table>
-    <tbody>
-      <tr>
-        <strong>Description:</strong>
-      </tr>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.description %></td>
-      </tr>
+  <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Description</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">More Info</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @hosting.each do |hosting| %>
+    <tr>
+        <th scope="row"></th>
+        <td><%= hosting.description %></td>
+        <td><%= hosting.date %></td>
+        <td><%= hosting.time %></td>
+        <td><%= link_to "More", hosting %></td>
+    </tr>
     <% end %>
-    </tbody>
+  </tbody>
   </table>
 
-  <h2>Attending</h2>
+<h1>Attending</h1>
+  <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Description</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">More Info</th>
 
-  <% @user.attended_events.each do |attended_event| %>
-  	<li class="list-group-item">
-  		<%= link_to attended_event.description, attended_event %>
-  	</li>
-  <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.attended_events.each do |attended_event| %>
+    <tr>
+        <th scope="row"></th>
+        <td><%= attended_event.description %></td>
+        <td><%= attended_event.date %></td>
+        <td><%= attended_event.time %></td>
+        <td><%= link_to "More", attended_event %></td>
+    </tr>
+    <% end %>
+  </tbody>
+  </table>
