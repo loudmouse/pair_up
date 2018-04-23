@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date, id: :event_date %>
+  </div>
+
+  <div class="field">
     <%= form.label :time %>
     <%= form.time_select :time, id: :event_time %>
   </div>

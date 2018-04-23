@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @events = User.find(params[:id]).events
+    @hosting = User.find(params[:id]).events
     @attended_events = @user.attended_events
   end
 end
