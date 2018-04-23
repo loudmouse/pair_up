@@ -13,4 +13,8 @@ class User < ApplicationRecord
     self.events.where("date > ?", Time.now)
   end
 
+  def past_events
+    self.events.where("date < ?", Time.now)
+  end
+
 end

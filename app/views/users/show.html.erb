@@ -47,3 +47,53 @@
     <% end %>
   </tbody>
   </table>
+
+  <h1>Upcoming Events</h1>
+    <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Description</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+        <th scope="col">More Info</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <% @upcoming_events.each do |upcoming_event| %>
+      <tr>
+          <th scope="row"></th>
+          <td><%= upcoming_event.description %></td>
+          <td><%= upcoming_event.date %></td>
+          <td><%= upcoming_event.time %></td>
+          <td><%= link_to "More", upcoming_event %></td>
+      </tr>
+      <% end %>
+    </tbody>
+    </table>
+
+    <h1>Past Events</h1>
+      <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Description</th>
+          <th scope="col">Date</th>
+          <th scope="col">Time</th>
+          <th scope="col">More Info</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% @past_events.each do |past_event| %>
+        <tr>
+            <th scope="row"></th>
+            <td><%= past_event.description %></td>
+            <td><%= past_event.date %></td>
+            <td><%= past_event.time %></td>
+            <td><%= link_to "More", past_event %></td>
+        </tr>
+        <% end %>
+      </tbody>
+      </table>
