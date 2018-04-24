@@ -52,5 +52,29 @@
   </tbody>
   </table>
 
+  <h1>Old Events</h1>
+    <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Description</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+        <th scope="col">More Info</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @old_events.each do |old_event| %>
+      <tr>
+          <th scope="row"></th>
+          <td><%= old_event.description %></td>
+          <td><%= old_event.date %></td>
+          <td><%= old_event.time %></td>
+          <td><%= link_to "More", old_event %></td>
+      </tr>
+      <% end %>
+    </tbody>
+    </table>
+
 
 <%= link_to 'New Event', new_event_path %>

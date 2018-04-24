@@ -7,4 +7,8 @@ class Event < ApplicationRecord
   def self.future_events
     Event.where("date > ?", Time.now)
   end
+
+  def self.old_events
+    Event.where("date < ?", Time.now)
+  end
 end
