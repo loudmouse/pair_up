@@ -4,11 +4,18 @@ class Event < ApplicationRecord
   has_many :attendances
   has_many :attendees, through: :attendances, source: :user
 
-  def self.future_events
-    Event.where("date > ?", Time.now)
-  end
+  scope :future_events, -> { where("date > ?", Time.now) } #scope: can now use future_events method
+  scope :old_events, -> { where("date < ?", Time.now) } #scope: can now use old_events method
 
-  def self.old_events
-    Event.where("date < ?", Time.now)
-  end
+  ## Refacotoring the below class methods into scopes above
+
+  # def self.future_events
+  #   Event.where("date > ?", Time.now)
+  # end
+
+  # def self.old_events
+  #   Event.where("date < ?", Time.now)
+  # end
+
+
 end
